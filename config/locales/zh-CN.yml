@@ -12,11 +12,11 @@ zh-CN:
         state: "省份"
         zipcode: "邮政编码"
       spree/calculator/tiered_flat_rate:
-        preferred_base_amount:
-        preferred_tiers:
+        preferred_base_amount: Base Amount
+        preferred_tiers: Tiers
       spree/calculator/tiered_percent:
-        preferred_base_percent:
-        preferred_tiers:
+        preferred_base_percent: Base Percent
+        preferred_tiers: Tiers
       spree/country:
         iso: ISO
         iso3: ISO3
@@ -24,10 +24,10 @@ zh-CN:
         name: "名称"
         numcode: ISO编号
       spree/credit_card:
-        base:
+        base: ''
         cc_type: "信用卡类型"
         month: "月份"
-        name:
+        name: "姓名"
         number: "卡号"
         verification_value: "验证码"
         year: "年份"
@@ -42,7 +42,7 @@ zh-CN:
       spree/order:
         checkout_complete: "完成结账"
         completed_at: "结账日期"
-        considered_risky:
+        considered_risky: "存在风险"
         coupon_code: "优惠券号码"
         created_at: "下单日期"
         email: "电子邮件"
@@ -95,7 +95,7 @@ zh-CN:
         starts_at: "开始日期"
         usage_limit: "使用次数限制"
       spree/promotion_category:
-        name:
+        name: "名称"
       spree/property:
         name: "名称"
         presentation: "描述"
@@ -104,25 +104,25 @@ zh-CN:
       spree/return_authorization:
         amount: "金额"
       spree/role:
-        name: ming cheng
+        name: "名称"
       spree/state:
         abbr: "缩写"
         name: "名称"
       spree/state_change:
-        state_changes:
-        state_from:
-        state_to:
-        timestamp:
-        type:
-        updated:
-        user:
+        state_changes: "状态变更"
+        state_from: "初始状态"
+        state_to: "目标状态"
+        timestamp: "时间戳"
+        type: "类型"
+        updated: "已更新"
+        user: "用户"
       spree/store:
-        mail_from_address:
-        meta_description:
-        meta_keywords:
-        name:
-        seo_title:
-        url:
+        mail_from_address: "寄件人地址"
+        meta_description: "元描述"
+        meta_keywords: "元关键词"
+        name: "仓库名称"
+        seo_title: "SEO抬头"
+        url: "仓库URL"
       spree/tax_category:
         description: "描述"
         name: "名称"
@@ -157,47 +157,47 @@ zh-CN:
         spree/calculator/tiered_flat_rate:
           attributes:
             base:
-              keys_should_be_positive_number:
+              keys_should_be_positive_number: "Tier keys should all be numbers larger than 0"
             preferred_tiers:
-              should_be_hash:
+              should_be_hash: "should be a hash"
         spree/calculator/tiered_percent:
           attributes:
             base:
-              keys_should_be_positive_number:
+              keys_should_be_positive_number: "Tier keys should all be numbers larger than 0"
               values_should_be_percent:
-            preferred_tiers:
-              should_be_hash:
+            preferred_tiers: "Tier values should all be percentages between 0% and 100%"
+              should_be_hash: "should be a hash"
         spree/classification:
           attributes:
             taxon_id:
-              already_linked:
+              already_linked: "is already linked to this product"
         spree/credit_card:
           attributes:
             base:
-              card_expired:
-              expiry_invalid:
+              card_expired: "Card has expired"
+              expiry_invalid: "Card expiration is invalid"
         spree/line_item:
           attributes:
             currency:
-              must_match_order_currency:
+              must_match_order_currency: "Must match order currency"
         spree/refund:
           attributes:
             amount:
-              greater_than_allowed:
+              greater_than_allowed: "is greater than the allowed amount"
         spree/reimbursement:
           attributes:
             base:
-              return_items_order_id_does_not_match:
+              return_items_order_id_does_not_match: "One or more of the return items specified do not belong to the same order as the reimbursement."
         spree/return_item:
           attributes:
             inventory_unit:
-              other_completed_return_item_exists:
+              other_completed_return_item_exists: "%{inventory_unit_id} has already been taken by return item %{return_item_id}"
             reimbursement:
-              cannot_be_associated_unless_accepted:
+              cannot_be_associated_unless_accepted: "cannot be associated to a return item that is not accepted."
         spree/store:
           attributes:
             base:
-              cannot_destroy_default_store:
+              cannot_destroy_default_store: "Cannot destroy the default Store."
     models:
       spree/address:
         one: "地址"
@@ -216,7 +216,11 @@ zh-CN:
         one: "单项"
         other: "单项"
       spree/option_type:
+        one: "属性类型"
+        other: "属性类型"
       spree/option_value:
+        one: "属性值"
+        other: "属性值"
       spree/order:
         one: "订单"
         other: "订单"
@@ -224,11 +228,15 @@ zh-CN:
         one: "支付"
         other: "支付"
       spree/payment_method:
+        one: "支付方式"
+        other: "支付方式"
       spree/product:
         one: "产品"
         other: "产品"
       spree/promotion: "促销"
       spree/promotion_category:
+        one: "促销类型"
+        other: "促销类型"
       spree/property:
         one: "属性"
         other: "属性"
@@ -236,12 +244,20 @@ zh-CN:
         one: "原型"
         other: "原型"
       spree/refund_reason:
+        one: "退款原因"
+        other: "退款原因"
       spree/reimbursement:
+        one: "赔偿"
+        other: "赔偿"
       spree/reimbursement_type:
+        one: "赔偿类型"
+        other: "赔偿类型"
       spree/return_authorization:
         one: "返回授权"
         other: "返回授权"
       spree/return_authorization_reason:
+        one: "返回授权原因"
+        other: "返回授权原因"
       spree/role:
         one: "角色"
         other: "角色"
@@ -252,13 +268,23 @@ zh-CN:
         one: "物流分类"
         other: "物流分类"
       spree/shipping_method:
+        one: "配送方式"
+        other: "配送方式"
       spree/state:
-        one: "省份"
+        one: "省份" #FIXME Should be "省份" here ?
         other: "省份"
       spree/state_change:
+        one: "状态变更"
+        other: "状态变更"
       spree/stock_location:
+        one: "仓库地址"
+        other: "仓库地址"
       spree/stock_movement:
+        one: "Stock Movement"
+        other: "Stock Movement"
       spree/stock_transfer:
+        one: "Stock Transfer"
+        other: "Stock Transfer"
       spree/tax_category:
         one: "缴税分类"
         other: "缴税分类"
@@ -272,6 +298,8 @@ zh-CN:
         one: "分类"
         other: "分类"
       spree/tracker:
+        one: "订单追踪"
+        other: "订单追踪"
       spree/user:
         one: "用户"
         other: "用户"
@@ -327,10 +355,10 @@ zh-CN:
       not_saved: "由于以下%{count}个错误，导致%{resource}无法保存："
   spree:
     abbreviation: "缩写"
-    accept:
-    acceptance_errors:
-    acceptance_status:
-    accepted:
+    accept: "接受"
+    acceptance_errors: "接受错误"
+    acceptance_status: "接受状态"
+    accepted: "已接受"
     account: "帐户"
     account_updated: "帐户更新完成!"
     action: "操作"
@@ -343,7 +371,7 @@ zh-CN:
       list: "列表"
       listing: "正在列出"
       new: "新建"
-      refund:
+      refund: "退款"
       save: "保存"
       update: "更新"
     activate: "激活"
@@ -351,7 +379,7 @@ zh-CN:
     add: "添加"
     add_action_of_type: "添加激活方式"
     add_country: "添加国家"
-    add_coupon_code:
+    add_coupon_code: "添加优惠码"
     add_new_header: "添加新的头部"
     add_new_style: "添加新的样式"
     add_one: "新建"
@@ -367,7 +395,7 @@ zh-CN:
     additional_item: "额外项目花费"
     address1: "地址"
     address2: "地址（继续）"
-    adjustable:
+    adjustable: "可调整"
     adjustment: "调整"
     adjustment_amount: "金额"
     adjustment_successfully_closed: "价格调整已被禁用！"
@@ -377,35 +405,35 @@ zh-CN:
     admin:
       tab:
         configuration: "配置"
-        option_types:
+        option_types: "属性类型"
         orders: "订单"
         overview: "概览"
         products: "产品"
         promotions: "促销"
-        properties:
-        prototypes:
+        properties: "属性"
+        prototypes: "原型"
         reports: "报告"
-        taxonomies:
-        taxons:
+        taxonomies: "分类方法"
+        taxons: "分类"
         users: "用户"
       user:
-        account:
-        addresses:
-        items:
-        items_purchased:
-        order_history:
-        order_num:
-        orders:
-        user_information:
+        account: "账户"
+        addresses: "地址"
+        items: "商品"
+        items_purchased: "已购买商品"
+        order_history: "订单历史"
+        order_num: "订单号"
+        orders: "订单"
+        user_information: "用户信息"
     administration: "管理"
-    advertise:
+    advertise: "广告"
     agree_to_privacy_policy: "同意隐私政策"
     agree_to_terms_of_service: "同意服务条款"
     all: "全部"
     all_adjustments_closed: "所有价格调整已被成功禁用！"
     all_adjustments_opened: "所有价格调整已被成功启用！"
     all_departments: "所有部门"
-    all_items_have_been_returned:
+    all_items_have_been_returned: "所有商品已被退还"
     allow_ssl_in_development_and_test: "允许在开发以及测试模式下使用SSL"
     allow_ssl_in_production: "允许在生产模式下使用SSL"
     allow_ssl_in_staging: "允许在演示模式下使用SSL"
@@ -414,10 +442,10 @@ zh-CN:
     alternative_phone: "其他电话"
     amount: "金额"
     analytics_desc_header_1: Spree Analytics
-    analytics_desc_header_2:
-    analytics_desc_list_1:
+    analytics_desc_header_2: Live analytics
+    analytics_desc_list_1: Get live sales information as it happens
     analytics_desc_list_2: "仅需要一个免费的Spree帐号用于激活"
-    analytics_desc_list_3:
+    analytics_desc_list_3: Absolutely no code to install
     analytics_desc_list_4: "完全免费"
     analytics_trackers: "追踪分析"
     and: "以及"
@@ -428,63 +456,65 @@ zh-CN:
     are_you_sure_delete: "你确定你要删除这条记录么?"
     associated_adjustment_closed: "相关联的价格调整已被关闭，并且不会被重复计算。您需要启用它吗？"
     authorization_failure: "认证失败"
-    authorized:
-    auto_capture:
+    authorized: "已授权"
+    auto_capture: "自动获取"
     available_on: "上架日期"
-    average_order_value:
-    avs_response:
+    average_order_value: "平均订单额"
+    avs_response: "AVS响应"
     back: "后退"
     back_end: "后端"
-    back_to_payment:
-    back_to_resource_list:
-    back_to_rma_reason_list:
+    back_to_payment: "回到支付"
+    back_to_resource_list: "回到%{resource}列表"
+    back_to_rma_reason_list: "回到RMA原因列表"
     back_to_store: "回到商店"
     back_to_users_list: "回到用户列表"
     backorderable: "可预订"
-    backorderable_default:
+    backorderable_default: "默认可预订状态"
     backordered: "待补"
-    backorders_allowed:
+    backorders_allowed: "允许超售"
     balance_due: "尚欠款"
-    base_amount:
-    base_percent:
+    base_amount: "Base Amount"
+    base_percent: "Base Percent"
     bill_address: "账单地址"
     billing: "账单"
     billing_address: "账单地址"
     both: "全部"
-    calculated_reimbursements:
+    calculated_reimbursements: "退款金额"
     calculator: "计算器"
     calculator_settings_warning: "如果你正在修改计算方式，你必须在编辑计算器设置之前先保存"
     cancel: "取消"
-    canceled_at:
-    canceler:
-    cannot_create_customer_returns:
+    canceled_at: "取消时间"
+    canceler: "取消者"
+    cannot_create_customer_returns: "无法创建客户退货"
     cannot_create_payment_without_payment_methods: "您无法在没有定义任何支付方式的情况下进行支付。"
     cannot_create_returns: "没有配送的订单不能申请退货"
     cannot_perform_operation: "无法执行请求的操作"
     cannot_set_shipping_method_without_address: "缺乏客户的详细信息，无法设置配送方式。"
     capture: "付款"
-    capture_events:
+    capture_events: "Capture events"
     card_code: "卡验证码"
     card_number: "卡号"
-    card_type:
+    card_type: "信用卡类型"
     card_type_is: "卡的类型是"
     cart: "购物车"
     cart_subtotal:
+      one: "共有1件商品"
+      other: "共有%{count}件商品"
     categories: "分类"
     category: "分类"
-    charged:
+    charged: "支付完成"
     check_for_spree_alerts: "查收Spree的通知"
     checkout: "结账"
     choose_a_customer: "选择用户"
     choose_a_taxon_to_sort_products_for:
     choose_currency: "选择货币"
     choose_dashboard_locale: "选择控制面板语言"
-    choose_location:
+    choose_location: "选择位置"
     city: "城市"
-    clear_cache:
-    clear_cache_ok:
-    clear_cache_warning:
-    click_and_drag_on_the_products_to_sort_them:
+    clear_cache: "Clear Cache"
+    clear_cache_ok: "Cache was flushed"
+    clear_cache_warning: "Clearing cache will temporarily reduce the performance of your store."
+    click_and_drag_on_the_products_to_sort_them: "点击并拖动商品以调整顺序"
     clone: "复制"
     close: "关闭"
     close_all_adjustments: "禁用所有价格调整"
@@ -501,40 +531,40 @@ zh-CN:
     cost_currency: "成本币种"
     cost_price: "进货价"
     could_not_connect_to_jirafe: "无法连接Jirafe。稍后将会自动重新连接。"
-    could_not_create_customer_return:
-    could_not_create_stock_movement:
+    could_not_create_customer_return: "无法创建客户退货"
+    could_not_create_stock_movement: "There was a problem saving this stock movement. Please try again."
     count_on_hand: "库存数量"
     countries: "国家"
     country: "国家"
     country_based: "根据国家"
     country_name: "名称"
     country_names:
-      CA:
-      FRA:
-      ITA:
-      US:
+      CA: "Canada"
+      FRA: "France"
+      ITA: "Italy"
+      US: "United States of America"
     coupon: "优惠券"
     coupon_code: "优惠券号码"
     coupon_code_already_applied: "优惠券号码已在本订单中使用"
     coupon_code_applied: "优惠券号码已在订单中生效。"
-    coupon_code_better_exists:
+    coupon_code_better_exists: "之前使用的优惠码可以提供更优惠的价格。"
     coupon_code_expired: "优惠券号码已过期"
     coupon_code_max_usage: "优惠券号码使用次数超出限制"
     coupon_code_not_eligible: "您的订单号码无法在您的订单上生效。"
     coupon_code_not_found: "您所输入的优惠券号码不存在。请重新输入。"
-    coupon_code_unknown_error:
+    coupon_code_unknown_error: "当前优惠码无法使用。"
     create: "创建"
     create_a_new_account: "创建一个新帐号"
-    create_new_order:
-    create_reimbursement:
+    create_new_order: "创建新订单"
+    create_reimbursement: "创建赔偿。"
     created_at: "创建日期"
     credit: "欠款??"
     credit_card: "信用卡"
     credit_cards: "信用卡"
     credit_owed: "应予退款"
-    credits:
+    credits: "积分"
     currency: "币种"
-    currency_decimal_mark:
+    currency_decimal_mark: "货币符号"
     currency_settings: "当前设置"
     currency_symbol_position: "在金额之前或者之后放置币种符号？"
     currency_thousands_separator: "千元分割符"
@@ -543,56 +573,56 @@ zh-CN:
     customer: "顾客"
     customer_details: "顾客详细信息"
     customer_details_updated: "已更新客户的详细信息"
-    customer_return:
-    customer_returns:
+    customer_return: "Customer Return"
+    customer_returns: "Customer Returns"
     customer_search: "顾客搜索"
     cut: "剪下"
-    cvv_response:
+    cvv_response: "CVV Response"
     dash:
       jirafe:
-        app_id:
-        app_token: "添加口令"
-        currently_unavailable:
-        explanation:
+        app_id: "App ID"
+        app_token: "App Token"
+        currently_unavailable: "Jirafe is currently unavailable. Spree will automatically connect to Jirafe once it is available."
+        explanation: The fields below may already be populated if you chose to register with Jirafe from the admin dashboard.
         header: Jirafe分析器设置
-        site_id:
+        site_id: "Site ID"
         token: "口令"
       jirafe_settings_updated: Jirafe设置已更新。
     date: "日期"
     date_completed: "完成日期"
     date_picker:
-      first_day:
+      first_day: 0
       format: "%Y/%m/%d"
       js_format: yy/mm/dd
     date_range: "时间范围"
     default: "默认"
-    default_refund_amount:
+    default_refund_amount: "默认退款金额"
     default_tax: "默认缴税"
     default_tax_zone: "默认缴税区域"
     delete: "删除"
-    deleted_variants_present:
+    deleted_variants_present: "当前订单中有缺货商品。"
     delivery: "配送"
     depth: "长"
     description: "描述"
     destination: "目的地"
     destroy: "删除"
-    details:
+    details: "详情"
     discount_amount: "折扣金额"
     dismiss_banner: "不，谢谢！我对此不感兴趣，请不要再显示此信息。"
     display: "显示"
     display_currency: "显示货币符号"
-    doesnt_track_inventory:
+    doesnt_track_inventory: "It doesn't track inventory"
     edit: "编辑"
-    editing_resource:
-    editing_rma_reason:
+    editing_resource: '编辑%{resource}'
+    editing_rma_reason: '编辑RMA原因'
     editing_user: "编辑用户"
     eligibility_errors:
       messages:
-        has_excluded_product:
-        item_total_less_than:
-        item_total_less_than_or_equal:
-        item_total_more_than:
-        item_total_more_than_or_equal:
+        has_excluded_product: '您的购物车包含不能使用该优惠码的产品。'
+        item_total_less_than: 该优惠码不能在低于%{amount}元的订单中使用。
+        item_total_less_than_or_equal: 该优惠码不能在小于或等于%{amount}元的订单中使用。
+        item_total_more_than: 该优惠码不能在大于%{amount}元的订单中使用。
+        item_total_more_than_or_equal: 该优惠码不能在大于或等于%{amount}元的订单中使用。
         limit_once_per_user:
         missing_product:
         missing_taxon:
